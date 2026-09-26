@@ -13,5 +13,5 @@
 .green-cta h2{font-size:36px;line-height:1.08;letter-spacing:-.025em;margin:0 0 18px}
 .green-cta p{max-width:760px;line-height:1.75;margin:0 0 12px}
 .green-cta p:last-child{margin-bottom:0}
-.green-cta + .section{padding-top:42px}
-@media (max-width:800px){.green-cta{padding:38px 30px;flex-direction:column;align-items:flex-start;gap:28px}.green-cta h2{font-size:30px}.green-cta + .section{padding-top:34px}}
+.green-cta + .section{padding-top:84px}
+@media (max-width:800px){.green-cta{padding:38px 30px;flex-direction:column;align-items:flex-start;gap:28px}.green-cta h2{font-size:30px}.green-cta + .section{padding-top:65px}}
