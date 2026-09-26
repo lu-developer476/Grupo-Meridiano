@@ -3,7 +3,7 @@ import{createRoot}from'react-dom/client';
 import{BrowserRouter,Routes,Route,Link,NavLink,useNavigate,useParams,useSearchParams,Navigate}from'react-router-dom';
 import{createClient}from'@supabase/supabase-js';
 import{Analytics}from'@vercel/analytics/react';
-import{ArrowLeft,ArrowRight,Bath,BedDouble,Building2,CalendarDays,Check,CircleDollarSign,Filter,House,LogOut,MapPin,Menu,Plus,Search,ShieldCheck,X}from'lucide-react';
+import{ArrowLeft,ArrowRight,Bath,BedDouble,Building2,CalendarDays,Check,CircleDollarSign,Filter,House,LogOut,Mail,MapPin,Menu,Phone,Plus,Search,ShieldCheck,X}from'lucide-react';
 import'./styles.css';
 
 const SB_URL=import.meta.env.VITE_SUPABASE_URL,SB_KEY=import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
