@@ -1,4 +1,239 @@
-<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Trastienda | Grupo Meridiano</title><style>*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:#f8f5ef;color:#1b2a24}.login{min-height:100vh;display:grid;place-items:center;padding:24px}.card{width:min(420px,100%);background:#fff;border:1px solid #e1e5e1;border-radius:22px;padding:40px;box-shadow:0 20px 55px #1b2a241f}h1,h2{font-family:Georgia,serif}h1{font-size:34px;margin:8px 0}.brand{font:bold 20px Georgia;color:#0c5a45;margin-bottom:30px}.k{font-size:11px;font-weight:800;letter-spacing:.12em;color:#0c5a45}p{color:#6c746f;line-height:1.6}label{display:grid;gap:7px;font-size:13px;font-weight:700;margin-top:18px}input{padding:13px;border:1px solid #d9dfda;border-radius:9px;font:inherit}button{border:0;border-radius:9px;padding:13px 18px;font-weight:700;cursor:pointer}.green{background:#0c5a45;color:white}.full{width:100%;margin-top:22px}.error{background:#fff0ee;color:#a53c31;padding:10px;border-radius:8px;margin-top:14px;font-size:13px}.note{font-size:12px}.app{display:none;min-height:100vh}.side{position:fixed;inset:0 auto 0 0;width:245px;background:#0b4033;color:white;padding:28px 18px}.side b{font:700 20px Georgia}.side small{display:block;color:#b9d5ca;margin-top:4px}.nav{margin-top:35px}.nav button{display:block;width:100%;text-align:left;background:transparent;color:#c9ddd5;margin:4px 0}.nav .active,.nav button:hover{background:#ffffff18;color:#fff}.logout{position:absolute;bottom:25px;left:18px;right:18px}.main{margin-left:245px;padding:45px}.top{display:flex;justify-content:space-between;align-items:end}.top h1{margin:7px 0 28px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.metric,.panel{background:white;border:1px solid #e1e5e1;border-radius:16px;padding:20px}.metric strong{display:block;font:700 28px Georgia;margin-top:12px}.metric span{color:#6c746f;font-size:13px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}.panel h2{margin-top:0}.row{display:flex;gap:12px;align-items:center;padding:13px 0;border-top:1px solid #edf0ed}.avatar{width:30px;height:30px;border-radius:8px;background:#e8f1ed;color:#0c5a45;display:grid;place-items:center;font-size:12px;font-weight:800}.row div:nth-child(2){flex:1}.row strong,.row small{display:block}.row small{color:#737c77;margin-top:3px}.badge{font-size:11px;background:#e8f3ee;color:#0c5a45;padding:5px 8px;border-radius:999px}@media(max-width:800px){.side{position:static;width:auto}.main{margin:0;padding:25px 18px}.metrics,.grid{grid-template-columns:1fr 1fr}.top{display:block}}@media(max-width:520px){.metrics,.grid{grid-template-columns:1fr}}</style></head><body>
-<div id="login" class="login"><form class="card" id="form"><div class="brand">GM · Grupo Meridiano</div><span class="k">TRASTIENDA</span><h1>Acceso interno</h1><p>¿Iniciar sesión?</p><label>Usuario<input id="u" autocomplete="username" required></label><label>Contraseña<input id="p" type="password" autocomplete="current-password" required></label><div id="e" class="error" style="display:none"></div><button class="green full" type="submit">Ingresar</button><p class="note">Acceso temporal de desarrollo. La autenticación real se conectará al backend más adelante.</p></form></div>
-<div id="app" class="app"><aside class="side"><b>Grupo Meridiano</b><small>Trastienda</small><div class="nav"><button class="active">Resumen</button><button>Propiedades</button><button>Consultas</button><button>Contactos</button><button>Contenido</button></div><button class="logout" onclick="logout()">Cerrar sesión</button></aside><main class="main"><div class="top"><div><span class="k">PANEL</span><h1>Resumen de tu inmobiliaria</h1></div><button class="green">+ Nueva propiedad</button></div><div class="metrics"><div class="metric"><strong>7</strong><span>Propiedades</span></div><div class="metric"><strong>4</strong><span>En venta</span></div><div class="metric"><strong>3</strong><span>En alquiler</span></div><div class="metric"><strong>2</strong><span>Consultas nuevas</span></div></div><div class="grid"><section class="panel"><h2>Últimas propiedades</h2><div class="row"><div class="avatar">1</div><div><strong>Casa luminosa en Belgrano</strong><small>$ 385.000</small></div><span class="badge">Disponible</span></div><div class="row"><div class="avatar">2</div><div><strong>Departamento 2 ambientes</strong><small>$ 158.000</small></div><span class="badge">Disponible</span></div><div class="row"><div class="avatar">3</div><div><strong>Casa moderna con parque</strong><small>$ 1.450 / mes</small></div><span class="badge">Disponible</span></div><div class="row"><div class="avatar">4</div><div><strong>Dúplex con terraza</strong><small>$ 2.100 / mes</small></div><span class="badge">Disponible</span></div></section><section class="panel"><h2>Últimas consultas</h2><div class="row"><div class="avatar">1</div><div><strong>Mariana A.</strong><small>Departamento en Palermo</small></div><span class="badge">Pendiente</span></div><div class="row"><div class="avatar">2</div><div><strong>Lucas F.</strong><small>Casa en Nordelta</small></div><span class="badge">Respondida</span></div><div class="row"><div class="avatar">3</div><div><strong>Sofía R.</strong><small>Casa para compra</small></div><span class="badge">Pendiente</span></div><div class="row"><div class="avatar">4</div><div><strong>Pablo M.</strong><small>Tasación de propiedad</small></div><span class="badge">Respondida</span></div></section></div></main></div>
-<script>const l=document.getElementById('login'),a=document.getElementById('app'),e=document.getElementById('e');function show(){l.style.display='none';a.style.display='block'}function logout(){sessionStorage.removeItem('gm_admin');location.reload()}if(sessionStorage.getItem('gm_admin')==='1')show();document.getElementById('form').onsubmit=x=>{x.preventDefault();if(document.getElementById('u').value.trim()==='admin'&&document.getElementById('p').value==='meridiano2026'){sessionStorage.setItem('gm_admin','1');show()}else{e.textContent='Usuario o contraseña incorrectos.';e.style.display='block'}}</script></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trastienda | Grupo Meridiano</title>
+<style>
+*{box-sizing:border-box}
+:root{--green:#0b4f3d;--green-2:#0c5a45;--cream:#f7f5ef;--text:#1b2a24;--muted:#6f7772;--line:#e1e5e1;--soft:#eef4f0;--white:#fff}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--cream);color:var(--text)}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.login{min-height:100vh;display:grid;place-items:center;padding:24px}
+.card{width:min(420px,100%);background:#fff;border:1px solid var(--line);border-radius:22px;padding:40px;box-shadow:0 20px 55px rgba(27,42,36,.12)}
+.brand{font:700 20px Georgia,serif;color:var(--green-2);margin-bottom:30px}
+.k{font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--green-2)}
+h1,h2,h3{font-family:Georgia,serif}
+h1{font-size:34px;margin:8px 0 16px}
+p{color:var(--muted);line-height:1.6}
+label{display:grid;gap:7px;font-size:13px;font-weight:700;margin-top:18px}
+input,select{width:100%;padding:13px;border:1px solid #d8dfda;border-radius:9px;background:#fff;color:var(--text);outline:none}
+input:focus,select:focus{border-color:var(--green-2);box-shadow:0 0 0 3px rgba(12,90,69,.1)}
+button{border:0;border-radius:9px;padding:12px 16px;font-weight:700}
+.green{background:var(--green-2);color:#fff}
+.green:hover{background:#084a38}
+.full{width:100%;margin-top:22px}
+.error{background:#fff0ee;color:#a53c31;padding:10px;border-radius:8px;margin-top:14px;font-size:13px}
+.note{font-size:12px}
+.app{display:none;min-height:100vh}
+.side{position:fixed;inset:0 auto 0 0;width:250px;background:var(--green);color:#fff;padding:28px 16px;display:flex;flex-direction:column;z-index:10}
+.side-brand{padding:0 12px 24px;border-bottom:1px solid rgba(255,255,255,.12)}
+.side-brand b{font:700 20px Georgia,serif}
+.side-brand small{display:block;color:#b9d5ca;margin-top:5px}
+.nav{margin-top:24px;display:grid;gap:5px}
+.nav button{width:100%;text-align:left;background:transparent;color:#c9ddd5;padding:12px 13px}
+.nav button:hover,.nav button.active{background:rgba(255,255,255,.1);color:#fff}
+.nav button.active{box-shadow:inset 3px 0 #fff}
+.logout{margin-top:auto;background:transparent;color:#c9ddd5;text-align:left;padding:12px 13px}
+.logout:hover{background:rgba(255,255,255,.08);color:#fff}
+.main{margin-left:250px;padding:42px clamp(24px,4vw,54px);min-height:100vh}
+.top{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:26px}
+.top h1{margin:7px 0 0;font-size:32px}
+.top p{margin:8px 0 0;font-size:14px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.metric,.panel{background:#fff;border:1px solid var(--line);border-radius:16px}
+.metric{padding:20px}
+.metric strong{display:block;font:700 29px Georgia,serif}
+.metric span{display:block;color:var(--muted);font-size:13px;margin-top:7px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.panel{padding:22px}
+.panel h2{margin:0 0 4px;font-size:21px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.row{display:flex;gap:12px;align-items:center;padding:14px 0;border-top:1px solid #edf0ed}
+.row:first-of-type{border-top:0}
+.avatar{width:34px;height:34px;flex:0 0 34px;border-radius:9px;background:#e8f1ed;color:var(--green-2);display:grid;place-items:center;font-size:12px;font-weight:800}
+.row-main{flex:1;min-width:0}
+.row strong,.row small{display:block}
+.row strong{font-size:14px}
+.row small{color:var(--muted);margin-top:4px}
+.badge{font-size:11px;background:#e8f3ee;color:var(--green-2);padding:5px 8px;border-radius:999px;white-space:nowrap}
+.view{display:none}
+.view.active{display:block}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:18px}
+.toolbar h2{margin:0;font-size:25px}
+.toolbar p{margin:5px 0 0;font-size:13px}
+.list-panel{padding:0;overflow:hidden}
+.table-row{display:grid;grid-template-columns:minmax(0,2fr) 1fr 1fr auto;gap:18px;align-items:center;padding:17px 20px;border-top:1px solid #edf0ed}
+.table-row:first-child{border-top:0}
+.table-row.header{background:#fafbf9;color:var(--muted);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.empty{padding:45px 20px;text-align:center;color:var(--muted)}
+.modal-backdrop{display:none;position:fixed;inset:0;background:rgba(14,28,22,.48);z-index:30;padding:20px;align-items:center;justify-content:center}
+.modal-backdrop.open{display:flex}
+.modal{width:min(560px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:20px;padding:28px;box-shadow:0 25px 70px rgba(0,0,0,.2)}
+.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.modal-head h2{margin:5px 0 0;font-size:25px}
+.close{background:#f1f3f1;color:#52605a;border-radius:50%;width:38px;height:38px;padding:0;font-size:20px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+.secondary{background:#f0f3f1;color:var(--text)}
+.toast{position:fixed;right:24px;bottom:24px;background:var(--green);color:#fff;padding:13px 17px;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,.18);display:none;z-index:50;font-size:13px}
+.toast.show{display:block}
+@media(max-width:900px){.side{position:static;width:auto;min-height:auto}.side-brand{border:0;padding-bottom:12px}.nav{grid-template-columns:repeat(5,1fr);margin-top:8px}.logout{margin-top:8px}.main{margin-left:0;padding:28px 20px}.metrics{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}}
+@media(max-width:620px){.nav{grid-template-columns:1fr 1fr}.top,.toolbar{align-items:stretch;flex-direction:column}.table-row{grid-template-columns:1fr;gap:7px}.table-row.header{display:none}.form-grid{grid-template-columns:1fr}.main{padding:22px 16px}.metrics{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div id="login" class="login">
+<form class="card" id="form">
+<div class="brand">GM · Grupo Meridiano</div>
+<span class="k">TRASTIENDA</span>
+<h1>Acceso interno</h1>
+<p>¿Iniciar sesión?</p>
+<label>Usuario<input id="u" autocomplete="username" required></label>
+<label>Contraseña<input id="p" type="password" autocomplete="current-password" required></label>
+<div id="e" class="error" style="display:none"></div>
+<button class="green full" type="submit">Ingresar</button>
+<p class="note">Acceso temporal de desarrollo. La autenticación real se conectará al backend más adelante.</p>
+</form>
+</div>
+
+<div id="app" class="app">
+<aside class="side">
+<div class="side-brand"><b>Grupo Meridiano</b><small>Trastienda</small></div>
+<nav class="nav" aria-label="Secciones">
+<button class="active" data-view="resumen">Resumen</button>
+<button data-view="propiedades">Propiedades</button>
+<button data-view="consultas">Consultas</button>
+<button data-view="contactos">Contactos</button>
+<button data-view="contenido">Contenido</button>
+</nav>
+<button class="logout" id="logout">Cerrar sesión</button>
+</aside>
+
+<main class="main">
+<section id="view-resumen" class="view active">
+<div class="top"><div><span class="k">PANEL</span><h1>Resumen de tu inmobiliaria</h1><p>Una vista general de la actividad de Grupo Meridiano.</p></div><button class="green" id="newProperty">+ Nueva propiedad</button></div>
+<div class="metrics">
+<div class="metric"><strong id="metricTotal">7</strong><span>Propiedades</span></div>
+<div class="metric"><strong id="metricSale">4</strong><span>En venta</span></div>
+<div class="metric"><strong id="metricRent">3</strong><span>En alquiler</span></div>
+<div class="metric"><strong>2</strong><span>Consultas nuevas</span></div>
+</div>
+<div class="grid">
+<section class="panel"><div class="panel-head"><h2>Últimas propiedades</h2><button class="secondary" data-view-link="propiedades">Ver todas</button></div>
+<div id="recentProperties"></div></section>
+<section class="panel"><div class="panel-head"><h2>Últimas consultas</h2><button class="secondary" data-view-link="consultas">Ver todas</button></div>
+<div id="recentQueries"></div></section>
+</div>
+</section>
+
+<section id="view-propiedades" class="view">
+<div class="toolbar"><div><span class="k">GESTIÓN</span><h2>Propiedades</h2><p>Administrá las propiedades publicadas en el sitio.</p></div><button class="green" id="newProperty2">+ Nueva propiedad</button></div>
+<div class="panel list-panel"><div class="table-row header"><span>Propiedad</span><span>Operación</span><span>Precio</span><span>Estado</span></div><div id="propertiesList"></div></div>
+</section>
+
+<section id="view-consultas" class="view">
+<div class="toolbar"><div><span class="k">GESTIÓN</span><h2>Consultas</h2><p>Consultas recibidas de potenciales clientes.</p></div></div>
+<div class="panel" id="queriesList"></div>
+</section>
+
+<section id="view-contactos" class="view">
+<div class="toolbar"><div><span class="k">GESTIÓN</span><h2>Contactos</h2><p>Personas y clientes registrados en la trastienda.</p></div></div>
+<div class="panel" id="contactsList"></div>
+</section>
+
+<section id="view-contenido" class="view">
+<div class="toolbar"><div><span class="k">GESTIÓN</span><h2>Contenido</h2><p>Accesos rápidos a los contenidos institucionales.</p></div></div>
+<div class="grid">
+<div class="panel"><h2>Inicio</h2><p>Administración del contenido principal, textos institucionales y propiedades destacadas.</p><button class="secondary" id="contentHome">Editar contenido</button></div>
+<div class="panel"><h2>Contacto</h2><p>Información de contacto, horarios y canales de atención.</p><button class="secondary" id="contentContact">Editar contenido</button></div>
+</div>
+</section>
+</main>
+</div>
+
+<div id="modalBackdrop" class="modal-backdrop">
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div class="modal-head"><div><span class="k">PROPIEDADES</span><h2 id="modalTitle">Nueva propiedad</h2></div><button class="close" id="closeModal" aria-label="Cerrar">×</button></div>
+<form id="propertyForm">
+<div class="form-grid">
+<label>Nombre<input id="propertyName" required placeholder="Ej. Casa luminosa en Belgrano"></label>
+<label>Operación<select id="propertyOperation"><option>Venta</option><option>Alquiler</option></select></label>
+<label>Precio<input id="propertyPrice" required placeholder="Ej. $ 385.000"></label>
+<label>Estado<select id="propertyStatus"><option>Disponible</option><option>Reservada</option><option>Vendida</option><option>Alquilada</option></select></label>
+</div>
+<div class="form-actions"><button type="button" class="secondary" id="cancelModal">Cancelar</button><button type="submit" class="green">Guardar propiedad</button></div>
+</form>
+</div>
+</div>
+<div id="toast" class="toast" role="status"></div>
+
+<script>
+const login=document.getElementById('login');
+const app=document.getElementById('app');
+const error=document.getElementById('e');
+const properties=[
+{name:'Casa luminosa en Belgrano',operation:'Venta',price:'$ 385.000',status:'Disponible'},
+{name:'Departamento 2 ambientes',operation:'Venta',price:'$ 158.000',status:'Disponible'},
+{name:'Casa moderna con parque',operation:'Alquiler',price:'$ 1.450 / mes',status:'Disponible'},
+{name:'Dúplex con terraza',operation:'Alquiler',price:'$ 2.100 / mes',status:'Disponible'},
+{name:'Departamento premium en Palermo',operation:'Venta',price:'$ 295.000',status:'Disponible'},
+{name:'Casa familiar en Nordelta',operation:'Venta',price:'$ 520.000',status:'Disponible'},
+{name:'Local comercial en Belgrano',operation:'Alquiler',price:'$ 1.900 / mes',status:'Disponible'}
+];
+const queries=[
+{name:'Mariana A.',detail:'Departamento en Palermo',status:'Pendiente'},
+{name:'Lucas F.',detail:'Casa en Nordelta',status:'Respondida'},
+{name:'Sofía R.',detail:'Casa para compra',status:'Pendiente'},
+{name:'Pablo M.',detail:'Tasación de propiedad',status:'Respondida'}
+];
+const contacts=[
+{name:'Mariana A.',detail:'Consulta por departamento en Palermo'},
+{name:'Lucas F.',detail:'Consulta por casa en Nordelta'},
+{name:'Sofía R.',detail:'Interesada en propiedades para compra'},
+{name:'Pablo M.',detail:'Solicitó una tasación'}
+];
+
+function showApp(){login.style.display='none';app.style.display='block';renderAll()}
+function logout(){sessionStorage.removeItem('gm_admin');location.reload()}
+function initials(name){return name.split(' ').map(x=>x[0]).slice(0,2).join('').toUpperCase()}
+function badge(status){return '<span class="badge">'+status+'</span>'}
+function renderAll(){
+document.getElementById('metricTotal').textContent=properties.length;
+document.getElementById('metricSale').textContent=properties.filter(p=>p.operation==='Venta').length;
+document.getElementById('metricRent').textContent=properties.filter(p=>p.operation==='Alquiler').length;
+document.getElementById('recentProperties').innerHTML=properties.slice(0,4).map((p,i)=>'<div class="row"><div class="avatar">'+(i+1)+'</div><div class="row-main"><strong>'+p.name+'</strong><small>'+p.price+'</small></div>'+badge(p.status)+'</div>').join('');
+document.getElementById('recentQueries').innerHTML=queries.map(q=>'<div class="row"><div class="avatar">'+initials(q.name)+'</div><div class="row-main"><strong>'+q.name+'</strong><small>'+q.detail+'</small></div>'+badge(q.status)+'</div>').join('');
+document.getElementById('propertiesList').innerHTML=properties.map(p=>'<div class="table-row"><strong>'+p.name+'</strong><span>'+p.operation+'</span><span>'+p.price+'</span>'+badge(p.status)+'</div>').join('');
+document.getElementById('queriesList').innerHTML=queries.map(q=>'<div class="row"><div class="avatar">'+initials(q.name)+'</div><div class="row-main"><strong>'+q.name+'</strong><small>'+q.detail+'</small></div>'+badge(q.status)+'</div>').join('');
+document.getElementById('contactsList').innerHTML=contacts.map(c=>'<div class="row"><div class="avatar">'+initials(c.name)+'</div><div class="row-main"><strong>'+c.name+'</strong><small>'+c.detail+'</small></div></div>').join('');
+}
+function go(view){
+document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));
+document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+view));
+window.scrollTo({top:0,behavior:'smooth'});
+}
+function openModal(){document.getElementById('modalBackdrop').classList.add('open');document.getElementById('propertyName').focus()}
+function closeModal(){document.getElementById('modalBackdrop').classList.remove('open');document.getElementById('propertyForm').reset()}
+function toast(message){const t=document.getElementById('toast');t.textContent=message;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
+document.getElementById('form').onsubmit=e=>{e.preventDefault();if(document.getElementById('u').value.trim()==='admin'&&document.getElementById('p').value==='meridiano2026'){sessionStorage.setItem('gm_admin','1');showApp()}else{error.textContent='Usuario o contraseña incorrectos.';error.style.display='block'}};
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.view)));
+document.querySelectorAll('[data-view-link]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.viewLink)));
+document.getElementById('logout').addEventListener('click',logout);
+document.getElementById('newProperty').addEventListener('click',openModal);
+document.getElementById('newProperty2').addEventListener('click',openModal);
+document.getElementById('closeModal').addEventListener('click',closeModal);
+document.getElementById('cancelModal').addEventListener('click',closeModal);
+document.getElementById('modalBackdrop').addEventListener('click',e=>{if(e.target.id==='modalBackdrop')closeModal()});
+document.getElementById('propertyForm').addEventListener('submit',e=>{
+e.preventDefault();
+properties.unshift({name:document.getElementById('propertyName').value.trim(),operation:document.getElementById('propertyOperation').value,price:document.getElementById('propertyPrice').value.trim(),status:document.getElementById('propertyStatus').value});
+renderAll();closeModal();go('propiedades');toast('Propiedad agregada correctamente.');
+});
+document.getElementById('contentHome').addEventListener('click',()=>toast('El editor de contenido se conectará al backend.'));
+document.getElementById('contentContact').addEventListener('click',()=>toast('El editor de contenido se conectará al backend.'));
+if(sessionStorage.getItem('gm_admin')==='1')showApp();
+</script>
+</body>
+</html>
