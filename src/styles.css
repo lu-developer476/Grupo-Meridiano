@@ -44,3 +44,8 @@
 .contact-form-only{display:block;width:100%;max-width:none;margin:0}
 @media(max-width:1000px){.footer-contact{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.footer-contact-brand{grid-column:1/-1}}
 @media(max-width:720px){.footer-contact{grid-template-columns:1fr;gap:18px}.footer-contact-brand{grid-column:auto}.contact-form-only{max-width:100%}}
+
+
+/* Centrar los textos del aviso de acceso restringido */
+.access-modal>.section-kicker{text-align:center;display:block;width:100%}
+.access-modal .restricted-message{text-align:center;width:100%;}
