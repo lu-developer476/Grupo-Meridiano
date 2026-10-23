@@ -40,6 +40,6 @@
 .footer-contact-item a,.footer-contact-item span{display:block;color:#111!important;font-size:13px;line-height:1.6;text-decoration:none;overflow-wrap:anywhere;margin:0}
 .footer-contact-item a:hover{color:var(--green)!important}
 .footer-inner{border-top:1px solid #d9d8d1;padding-top:18px}
-.contact-form-only{display:block;max-width:820px;margin:0 auto}
+.contact-form-only{display:block;width:100%;max-width:none;margin:0}
 @media(max-width:1000px){.footer-contact{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.footer-contact-brand{grid-column:1/-1}}
 @media(max-width:720px){.footer-contact{grid-template-columns:1fr;gap:18px}.footer-contact-brand{grid-column:auto}.contact-form-only{max-width:100%}}
