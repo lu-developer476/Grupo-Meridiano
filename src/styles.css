@@ -49,3 +49,5 @@
 /* Centrar los textos del aviso de acceso restringido */
 .access-modal>.section-kicker{text-align:center;display:block;width:100%}
 .access-modal .restricted-message{text-align:center;width:100%;}
+
+.access-modal h2{text-align:center}
