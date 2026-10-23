@@ -1,6 +1,6 @@
 import React,{useEffect,useState}from'react';
 import{createRoot}from'react-dom/client';
-import{BrowserRouter,Routes,Route,Link,NavLink,useNavigate,useParams,useSearchParams}from'react-router-dom';
+import{BrowserRouter,Routes,Route,Link,NavLink,useLocation,useNavigate,useParams,useSearchParams}from'react-router-dom';
 import{createClient}from'@supabase/supabase-js';
 import{Analytics}from'@vercel/analytics/react';
 import{ArrowLeft,ArrowRight,Bath,BedDouble,Building2,CalendarDays,Check,ChevronDown,CircleDollarSign,Filter,House ,Mail,MapPin,Menu,Phone ,Search,ShieldCheck,Sparkles,X}from'lucide-react';
