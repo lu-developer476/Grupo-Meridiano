@@ -30,16 +30,17 @@
 @media(max-width:800px){.footer-contact{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.footer-contact-brand{grid-column:1/-1}}
 @media(max-width:480px){.footer-contact{grid-template-columns:1fr;gap:18px}.footer-contact-brand{grid-column:auto}.footer-inner{gap:12px;align-items:flex-start;flex-direction:column}}
 
-/* Footer: marca consistente, datos legibles y distribución responsive */
-.footer-contact{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding:26px 0 30px;align-items:center;justify-items:center;text-align:center}
-.footer-contact-brand .brand{display:flex;color:#17231e;text-decoration:none;font-size:19px;margin:0}
-.footer-contact-brand p{color:#111!important;margin:12px 0 0;font-size:13px;line-height:1.6}
-.footer-contact-item{display:flex;align-items:flex-start;justify-content:center;gap:10px;color:#111;min-width:0;text-align:left}
-.footer-contact-item>svg{color:var(--green);flex:0 0 auto;margin-top:2px}
-.footer-contact-item strong{display:block;color:#111;font-size:13px;margin-bottom:5px}
-.footer-contact-item a,.footer-contact-item span{display:block;color:#111!important;font-size:13px;line-height:1.6;text-decoration:none;overflow-wrap:anywhere;margin:0}
+/* Footer: datos de contacto agrupados y centrados */
+.footer-contact{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;width:min(100%,1000px);margin:0 auto;padding:26px 0 30px;align-items:start;justify-items:center;text-align:center}
+.footer-contact-brand .brand{display:flex;justify-content:center;color:#17231e;text-decoration:none;font-size:19px;margin:0 auto}
+.footer-contact-brand p{color:#111!important;margin:12px auto 0;font-size:13px;line-height:1.6;text-align:center}
+.footer-contact-item{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px;color:#111;min-width:0;width:100%;text-align:center}
+.footer-contact-item>svg{color:var(--green);flex:0 0 auto;margin:0}
+.footer-contact-item>div{display:flex;flex-direction:column;align-items:center;gap:4px;width:100%}
+.footer-contact-item strong{display:block;color:#111;font-size:13px;margin-bottom:2px}
+.footer-contact-item a,.footer-contact-item span{display:block;color:#111!important;font-size:13px;line-height:1.6;text-decoration:none;overflow-wrap:anywhere;margin:0;text-align:center}
 .footer-contact-item a:hover{color:var(--green)!important}
-.footer-inner{border-top:1px solid #d9d8d1;padding-top:18px}
+.footer-inner{border-top:1px solid #d9d8d1;padding-top:18px;justify-content:center}
 .contact-form-only{display:block;width:100%;max-width:none;margin:0}
 @media(max-width:1000px){.footer-contact{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.footer-contact-brand{grid-column:1/-1}}
 @media(max-width:720px){.footer-contact{grid-template-columns:1fr;gap:18px}.footer-contact-brand{grid-column:auto}.contact-form-only{max-width:100%}}
