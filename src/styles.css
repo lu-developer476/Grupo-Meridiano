@@ -51,3 +51,48 @@
 .access-modal .restricted-message{text-align:center;width:100%;}
 
 .access-modal h2{text-align:center}
+
+
+/* CTA institucional: composición adaptable sin alterar Desktop */
+@media (min-width:801px){
+  .green-cta{
+    display:grid;
+    grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);
+    gap:56px;
+    align-items:center;
+    padding:56px 64px;
+    margin-top:56px;
+    margin-bottom:0;
+    border-radius:28px;
+    box-shadow:0 18px 45px rgba(12,90,69,.14);
+  }
+  .green-cta .green-cta-copy{
+    min-width:0;
+    padding-left:34px;
+    border-left:1px solid rgba(255,255,255,.2);
+  }
+}
+@media (max-width:800px){
+  .green-cta{
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    gap:22px;
+    padding:38px 30px;
+    margin-top:42px;
+    margin-bottom:0;
+    align-items:start;
+  }
+  .green-cta>div{max-width:none;width:100%;min-width:0}
+  .green-cta .green-cta-copy{
+    padding:0;
+    border:0;
+    width:100%;
+  }
+  .green-cta h2{font-size:30px;line-height:1.12;margin-bottom:0}
+  .green-cta p{font-size:15px;line-height:1.7;overflow-wrap:break-word}
+}
+@media (max-width:480px){
+  .green-cta{padding:28px 22px;gap:18px;margin-top:34px;border-radius:20px}
+  .green-cta h2{font-size:28px;line-height:1.14}
+  .green-cta p{font-size:14px;line-height:1.65}
+}
