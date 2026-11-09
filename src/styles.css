@@ -96,3 +96,16 @@
   .green-cta h2{font-size:28px;line-height:1.14}
   .green-cta p{font-size:14px;line-height:1.65}
 }
+
+/* Ajustes finales de Tablet y Mobile */
+@media (min-width:721px) and (max-width:1040px){
+  .hero{min-height:0}
+  .hero-content{padding:64px 0 52px}
+  .footer-contact{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+}
+@media (max-width:720px){
+  .hero{min-height:0}
+  .hero-content{padding:48px 0 38px}
+  .footer-contact{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+  .footer-contact-brand{grid-column:1/-1}
+}
